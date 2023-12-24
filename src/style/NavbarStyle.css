@@ -10,7 +10,7 @@
 /* Navigation */
 .navigation-menu li{
     margin: 0 20px;
-    width: 90px;
+    /* width: 90px; */
     padding: 7px;
     margin: 7px;
 }
@@ -38,20 +38,37 @@ border-radius: 10px;
     margin-top: 4px;
 }
 
-/* Mobile View */
+/* Mobile view */
 .nav{
+    display: flex;  
+   }
+
+   .nav ul {
+    display: flex;
+    list-style: none;
+    padding: 12px;
+    margin: 12px;
+   }
+
+   .nav li a{
+    text-decoration: none;
+    /* padding: 12px; */
+    margin: 12px;
+    font-size: 25px;
+    color: black;
+   }
+
+/* .nav ul{
     list-style: none;
     padding-left: 10px;
     text-align: left;
    margin-right: 25px;
     margin-top: 7px;
-   }
+}
 
 .nav li{
-    /* margin-top: 4px; */
     padding: 12px;
     list-style: none;
-    height: 51px;
 }
 
 .nav li a{
@@ -64,4 +81,4 @@ border-radius: 10px;
     background-color: #f6f5f5;
     color: aqua;
     border-radius: 4px;
-}
+} */

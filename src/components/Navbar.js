@@ -38,24 +38,53 @@ const style = {
     <div>
       <Box flexGrow={1}>
         <AppBar component={"nav"} sx={{ bgcolor: "white", color: "black" }}>
+          
           <Toolbar>
-            {/* Icon */}
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{mt:'12px'}}>
+            <Typography variant="h5" component="div">
+              <SportsBasketballTwoToneIcon variant="h5" />
+             ShahSports 
+            </Typography>
+            </Box>
+
+            <Box className="nav" sx={{mt:'12px'}}>
+                        <ul>
+                          <li>
+                            <Link to={"/"}>Home</Link>
+                          </li>
+                          <li>
+                            <Link to={"/about"}>About</Link>
+                          </li>
+                          <li>
+                            <Link to={"/contact"}>Contact</Link>
+                          </li>
+                        </ul>
+                    </Box>
+            </Toolbar> 
+           
+          
+        </AppBar>
+        </Box>
+          <Box sx={{p: 3}}><Toolbar /></Box>
+    </div>
+  );
+};
+
+
+
+ {/* Search Bar */}
+
+
+
+ {/* 
+ 
+  <Box sx={{ display: 'flex' }}>
             <IconButton aria-label="open drawer" edge="start" onClick={handleDrawerToggler} sx={{mr:2}}>
               <MenuIcon />
             </IconButton>
             </Box>
-
-            {/* Logo and name */}
-            <Box>
-            <Typography variant="h5" component="div">
-              <SportsBasketballTwoToneIcon variant="h5" />
-              ShahSports
-            </Typography>
-            </Box>
-
-            {/* Search Bar */}
-            <Box className="search" flexGrow={3}>
+ 
+ <Box className="search" flexGrow={3}>
                <Search>
                     <SearchIconWrapper>
                         <SearchIcon />
@@ -63,7 +92,6 @@ const style = {
                </Search>
           </Box>
 
-            {/* Options */}
             <Box  variant="h5" flexGrow={1}>
               <ul className="navigation-menu">
                 <li>
@@ -74,48 +102,24 @@ const style = {
                 </li>
               </ul>
             </Box>
-          </Toolbar>
-          
-        </AppBar>
 
-         <Drawer variant="temporary" sx={{ flexShrink: 0, '& .MuiDrawer-paper': {width: '230px',
+            <Drawer variant="temporary" sx={{ flexShrink: 0, '& .MuiDrawer-paper': {width: '230px',
                          boxSizing: 'border-box', },}} anchor="left" open={open} onClose={()=> setOpen(false)}>
-                      {/* {drawer} */}
 
-               <Box className='nav'>             
-                    <IconButton aria-label="open drawer" edge="start" onClick={()=> setOpen(false)} sx={{mr:2}}>
-                          <MenuIcon />
-                    </IconButton>
-
-                        <Box sx={{style}}>
-                        <Typography variant="h5" component="div">
-                          <SportsBasketballTwoToneIcon variant="h5" />
-                          ShahSports
-                        </Typography>
-                        </Box>
-                    <Divider></Divider>
-
-                    <Box sx={{mt:'12px'}}>
-                        <ul>
-                          <li>
-                            <Link to={"/"}>Home</Link>
-                          </li>
-                          <Divider></Divider>
-                          <li>
-                            <Link to={"/about"}>About</Link>
-                          </li>
-                          <Divider></Divider>
-                          <li>
-                            <Link to={"/contact"}>Contact</Link>
-                          </li>
-                        </ul>
-                    </Box>
+                      <Box className='nav'>             
+                      <IconButton aria-label="open drawer" edge="start" onClick={()=> setOpen(false)} sx={{mr:2}}>
+                            <MenuIcon />
+                      </IconButton>
+  
+                          <Box sx={{style}}>
+                              <Typography variant="h5" component="div">
+                                <SportsBasketballTwoToneIcon variant="h5" />
+                                ShahSports
+                              </Typography>
+                          </Box>
+                      <Divider></Divider>
                   </Box>
-        </Drawer>
-        </Box>
-          <Box sx={{p: 1}}><Toolbar /></Box>
-    </div>
-  );
-};
+          </Drawer>
+*/}
 
 export default Navbar;
