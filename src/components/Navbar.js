@@ -48,8 +48,8 @@ const drawer = (
               <MenuIcon />
             </IconButton>
             
-            <Typography variant="h5" component="div">
-             ShahSports 
+            <Typography variant="h5" component="div" sx={{cursor:'pointer'}}>
+                 ShahSports
             </Typography>
 
             <Box sx={{display:{xs:'none', sm:'block'}} }>
