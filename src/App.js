@@ -3,6 +3,7 @@ import Home from './pages/Home.js'
 import About from './pages/About.js'
 import Contact from './pages/Contact.js'
 import Pagenotfound from './pages/Pagenotfound.js'
+import Product from './pages/Product.js'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/product" element={<Product />} />
       <Route path="*" element={<Pagenotfound />} />
      </Routes>
      </BrowserRouter>

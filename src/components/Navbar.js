@@ -5,50 +5,55 @@ import { Link } from "react-router-dom";
 import "../style/NavbarStyle.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from '@mui/material/Drawer';
-import Search from '@mui/icons-material/Search';
-import SearchIcon from '@mui/icons-material/Search';
-import StyledInputBase from '@mui/icons-material/Search';
-import SearchIconWrapper from '@mui/icons-material/Search';
-import { grey } from "@mui/material/colors";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
 
 const handleDrawerToggler = () => {
-     if(setOpen =='false'){
-      setOpen('true');
-     }
-     else{
-      setOpen('false');
-     }
+     setOpen(!open)
 };
 
-const style = {
-  display: 'flex',
-  flexdirection: 'column',
-  textalign: 'center',
-
-}
+const drawer = (
+  <Box onClick={handleDrawerToggler} sx={{textAlign:'center'}}>
+      <Typography variant="h5" component="div" sx={{p:1.5}}>
+             ShahSports 
+            </Typography>
+            <Divider/>
+                <ul className="mobile-nav" sx={{mt:'12px'}}>
+                   <li>
+                      <Link to={"/"}>Home</Link>
+                   </li><Divider/>
+                   <li>
+                      <Link to={"/about"}>About</Link>
+                   </li><Divider/>
+                   <li>
+                      <Link to={"/contact"}>Contact</Link>
+                   </li><Divider/>
+                   <li>
+                      <Link to={"/product"}>Product</Link>
+                   </li><Divider/>  
+                 </ul>
+  </Box>
+)
 
   return (
     <div>
-      <Box flexGrow={1}>
+      <Box>
         <AppBar component={"nav"} sx={{ bgcolor: "white", color: "black" }}>
-          
           <Toolbar>
-            <Box sx={{mt:'12px'}}>
+            <IconButton color="inherit" aria-label="open drawer" edge="start" sx={{mr:2, display:{sm:"none"}} } onClick={handleDrawerToggler}>
+              <MenuIcon />
+            </IconButton>
+            
             <Typography variant="h5" component="div">
-              <SportsBasketballTwoToneIcon variant="h5" />
              ShahSports 
             </Typography>
-            </Box>
 
-            <Box className="nav" sx={{mt:'12px'}}>
-                        <ul>
+            <Box sx={{display:{xs:'none', sm:'block'}} }>
+                <ul className="navigation">
                           <li>
                             <Link to={"/"}>Home</Link>
                           </li>
@@ -58,14 +63,20 @@ const style = {
                           <li>
                             <Link to={"/contact"}>Contact</Link>
                           </li>
-                        </ul>
+                          <li>
+                            <Link to={"/product"}>Product</Link>
+                          </li>
+                 </ul>
                     </Box>
-            </Toolbar> 
-           
-          
+            </Toolbar>  
         </AppBar>
+        <Box component="nav">
+          <Drawer variant="temporary" open={open} onClose={handleDrawerToggler} sx={{display:{xs:'block', sm:'none'}, "&. MuiDrawer-paper":{boxSizing:'border-box', width:'240px'}}}>
+            {drawer}
+          </Drawer>
         </Box>
-          <Box sx={{p: 3}}><Toolbar /></Box>
+        </Box>
+          <Box sx={{p: 2}}><Toolbar /></Box>
     </div>
   );
 };
